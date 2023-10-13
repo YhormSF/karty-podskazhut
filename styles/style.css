@@ -45,7 +45,6 @@ figure {
     font-family: var(--accent-font, serif);
     color: var(--text-color, #312A4E);
     text-align: center;
-    font-style: normal;
     font-weight: 600;
     line-height: 90%; /* 27px */
     text-align: center;
@@ -64,7 +63,7 @@ padding-top: 10%;
 /* исходя из размера шрифта в максимальной и минимальной ширине макета */
 .header_title {
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
-  margin-bottom: 40px;
+  margin-block-end: 40px; /* margin-bottom */
 }
 /* заголовки main */
 .content_title {
@@ -73,3 +72,93 @@ margin-top: 7%;
 margin-bottom: 2.5%;
 }
 
+.content_text-block {
+  font-family: var(--main-font, 'Raleway');
+  font-size: 18px;
+}
+
+.content_paragraph {
+  color: var(--text-color, #312A4E);
+  /* font-size: 30px; */
+}
+
+/* отступы параграфа (кроме последнего), вложенные в блоки */
+.content_text-block .content_paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em; /* margin-bottom */
+}
+
+
+/* принудительное наследование цвета текста от родителя у ссылок (вложенны)*/
+.content_text-block a {
+color: inherit;
+}
+
+/* цитата */
+.content_blockquote {
+  color: var(--text-color, #312A4E);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 200%; /* 36px */
+  /* размер */
+  inline-size: 75%;
+  margin: 0 auto 1.5em;
+}
+
+/* убираем маркеры и делаем отступ слева */
+/* плюс позиция для вставки маркера */
+.content_list {
+  position: relative;
+  list-style-type: none;
+  padding-inline-start: 30px;
+}
+
+
+/* отступы списка кроме последнего */
+.content_list:not(:last-of-type) {  
+  margin-block-end: 10px;
+}
+
+/* создаем кроссбраузерный маркер */
+.content_list::before {
+content: '';
+position: absolute;
+/* квадрат 15на15 */
+inline-size: 15px;
+block-size: 15px;
+background-image: url(/images/marker-light.svg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+/* приколы с позиционированием */
+margin-block-start: -7.5px;
+inset-block-start: 50%;
+inset-inline-start: 0;
+}
+
+/* буквица (т.е. заглавная буква стильная */
+.content_text-block_type_first-lettered .content_paragraph:first-child:first-letter {
+  /* Делаем строчно-блочный для добавления отступов */
+  display: inline-block;
+  background-color: var(--accent-color);
+  font-size: 30px;
+  font-weight: 700;
+  /* letter-spacing: 9px; */
+  padding: 0 4px;
+  /* отступ справа */
+  margin-inline-end: 1px;
+}
+
+/* контейнер с изображением */
+.content_figure {
+
+}
+
+/* изображение */
+.content__picture {
+  
+}
+
+/* описание изображения */
+.content_picture-caption {
+
+}
