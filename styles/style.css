@@ -150,15 +150,72 @@ inset-inline-start: 0;
 
 /* контейнер с изображением */
 .content_figure {
-
+margin: 7% auto;
+/* делаем изображение на всю страницу */
+/* 100% + сумма боковых отступов (5vi and 5vi) */
+width: calc(100% + 10vi);
+position: relative;
+right: 5vi;
 }
 
 /* изображение */
 .content__picture {
-  
+  width: 100%;
 }
 
-/* описание изображения */
+/* описание изображения снизу */
 .content_picture-caption {
+color: var(--text-color);
+font-family: var(--main-font);
+font-size: 18px;
+font-weight: 400;
+text-align: center;
+border-bottom: 1px solid var(--text-color);
+padding: 20px 0;
+}
 
+/* контейнер с карточкой */
+.content_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+margin-top: 7%;
+border: 1px solid var(--text-color);
+/* пропорции 4/3 */
+aspect-ratio: 4/3;
+}
+
+/* заголовок карточки */
+.content_card-title {
+  font-size: 60px;
+
+}
+
+/* абзац в карточке */
+.content_card-subtitle {
+  font-size: 18px;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-weight: 400;
+  text-align: center;
+}
+
+/* для подчеркивания позиция и дисплей */
+.colored-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* подчеркивание заголовка в конце */
+.colored-text::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  /* чтобы был за текстом */
+  z-index: -1;
+  /* размер самой линии + отступы от текста */
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
 }
