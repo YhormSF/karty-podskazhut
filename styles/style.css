@@ -5,7 +5,7 @@
 }
 
 .page {
-  background-color: var(--bg-color, #F3EFEC);
+  background-color: var(--bg-color, #f3efec);
   min-inline-size: 360px;
   margin: 0;
 }
@@ -25,30 +25,30 @@ figure {
 :root {
   /* переменные для переключения темы */
   /* цвет фона */
-  --bg-color: #F3EFEC;
-    /* цвет текста */
-    --text-color: #312A4E;;
-    
-    /* акцентичный цвет (подчеркивание у кнопок и выделение текста в карточке) */
-    --accent-color: #FFAB6B;
-    
-    /* другие переменные */
-    /* имя семейства шрифтов преобладающего текста (абзацы) */
-    --main-font: 'Raleway';
-    
-    /* шрифт для заголовков и особенных текстовых элементов */
-    --accent-font: 'STIX Two Text';
-  }
-  
-  /* общее свойство для всех заголовков */
-  .heading {
-    font-family: var(--accent-font, serif);
-    color: var(--text-color, #312A4E);
-    text-align: center;
-    font-weight: 600;
-    line-height: 90%; /* 27px */
-    text-align: center;
-  }
+  --bg-color: #f3efec;
+  /* цвет текста */
+  --text-color: #312a4e;
+
+  /* акцентичный цвет (подчеркивание у кнопок и выделение текста в карточке) */
+  --accent-color: #ffab6b;
+
+  /* другие переменные */
+  /* имя семейства шрифтов преобладающего текста (абзацы) */
+  --main-font: "Raleway";
+
+  /* шрифт для заголовков и особенных текстовых элементов */
+  --accent-font: "STIX Two Text";
+}
+
+/* общее свойство для всех заголовков */
+.heading {
+  font-family: var(--accent-font, serif);
+  color: var(--text-color, #312a4e);
+  text-align: center;
+  font-weight: 600;
+  line-height: 90%; /* 27px */
+  text-align: center;
+}
 
 /* создание полей по бокам */
 .content-section {
@@ -56,7 +56,7 @@ figure {
 }
 
 .header {
-padding-top: 10%;
+  padding-top: 10%;
 }
 
 /* резиновый размер шрифта для заголовка с помощью сайта Font-size Clamp Generator*/
@@ -68,25 +68,21 @@ padding-top: 10%;
 
 /* навигационное меню с лого и переключателем тем */
 .header_menu {
-display: flex;
-justify-content: space-between;
-
-
-border-top: 1px solid #312A4E;
-border-bottom: 1px solid #312A4E;
-
-padding-block: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #312a4e;
+  border-bottom: 1px solid #312a4e;
+  padding-block: 20px;
 }
-
-
 
 /* контейнер списка */
 .header_theme-toggler {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
   list-style-type: none;
   gap: 20px;
   padding: 0;
-  
 }
 
 /* обе кнопки */
@@ -101,7 +97,6 @@ padding-block: 20px;
   /* прозрачный фон для подчеркивания оранжеовго */
   background-color: transparent;
   /* жирность 400 - неактивная, 700 - активная */
-  font-weight: 400;
 }
 
 /* кнопка тёмной темы */
@@ -110,22 +105,27 @@ padding-block: 20px;
 /* кнопка светлой темы */
 .header_theme-button_type_light
 
+
+/* ! ват */
 /* включённая в текущий момент кнопка */
+.header_theme-button_is-active {
+  font-weight: 700;
+}
 .header_theme-button_is-active {
   font-weight: 700;
 }
 
 /* контейнер с лого */
 .header_logo {
-display: flex;
-flex-direction: column;
-justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--text-color)
 }
-
 
 /* подчеркивание у активной темы */
 .header_theme-button_is-active::after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--accent-color);
   /* чтобы был за текстом */
@@ -137,9 +137,13 @@ justify-content: space-around;
   inset-inline-start: -4px;
 }
 
+
+
+
+
 /* сброс фокуса у кнопок и ссылок */
 button:focus,
- a:focus {
+a:focus {
   outline: none;
 }
 
@@ -156,24 +160,24 @@ button:disabled {
 
 /* стандратное подчеркивание при наведении курсора */
 .header_theme-button:hover {
- text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 /* заголовки main */
 .content_title {
-font-size: 30px;
-margin-top: 7%;
-margin-bottom: 2.5%;
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
 }
 
 .content_text-block {
-  font-family: var(--main-font, 'Raleway');
+  font-family: var(--main-font, "Raleway");
+  color: var(--text-color);
   font-size: 18px;
 }
 
 .content_paragraph {
-  color: var(--text-color, #312A4E);
+  color: var(--text-color, #312a4e);
   /* font-size: 30px; */
 }
 
@@ -182,15 +186,14 @@ margin-bottom: 2.5%;
   margin-block-end: 1.5em; /* margin-bottom */
 }
 
-
 /* принудительное наследование цвета текста от родителя у ссылок (вложенны)*/
 .content_text-block a {
-color: inherit;
+  color: inherit;
 }
 
 /* цитата */
 .content_blockquote {
-  color: var(--text-color, #312A4E);
+  color: var(--text-color);
   font-style: italic;
   font-weight: 400;
   line-height: 200%; /* 36px */
@@ -207,31 +210,31 @@ color: inherit;
   padding-inline-start: 30px;
 }
 
-
 /* отступы списка кроме последнего */
-.content_list:not(:last-of-type) {  
+.content_list:not(:last-of-type) {
   margin-block-end: 10px;
 }
 
 /* создаем кроссбраузерный маркер */
 .content_list::before {
-content: '';
-position: absolute;
-/* квадрат 15на15 */
-inline-size: 15px;
-block-size: 15px;
-background-image: url(/images/marker-light.svg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
-/* приколы с позиционированием */
-margin-block-start: -7.5px;
-inset-block-start: 50%;
-inset-inline-start: 0;
+  content: "";
+  position: absolute;
+  /* квадрат 15на15 */
+  inline-size: 15px;
+  block-size: 15px;
+  background-image: url(/images/marker-light.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* приколы с позиционированием */
+  margin-block-start: -7.5px;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
 }
 
 /* буквица (т.е. заглавная буква стильная */
-.content_text-block_type_first-lettered .content_paragraph:first-child:first-letter {
+.content_text-block_type_first-lettered
+  .content_paragraph:first-child:first-letter {
   /* Делаем строчно-блочный для добавления отступов */
   display: inline-block;
   background-color: var(--accent-color);
@@ -245,12 +248,12 @@ inset-inline-start: 0;
 
 /* контейнер с изображением */
 .content_figure {
-margin: 7% auto;
-/* делаем изображение на всю страницу */
-/* 100% + сумма боковых отступов (5vi and 5vi) */
-width: calc(100% + 10vi);
-position: relative;
-right: 5vi;
+  margin: 7% auto;
+  /* делаем изображение на всю страницу */
+  /* 100% + сумма боковых отступов (5vi and 5vi) */
+  width: calc(100% + 10vi);
+  position: relative;
+  right: 5vi;
 }
 
 /* изображение */
@@ -260,13 +263,13 @@ right: 5vi;
 
 /* описание изображения снизу */
 .content_picture-caption {
-color: var(--text-color);
-font-family: var(--main-font);
-font-size: 18px;
-font-weight: 400;
-text-align: center;
-border-bottom: 1px solid var(--text-color);
-padding: 20px 0;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  border-bottom: 1px solid var(--text-color);
+  padding: 20px 0;
 }
 
 /* контейнер с карточкой */
@@ -274,16 +277,15 @@ padding: 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-margin-top: 7%;
-border: 1px solid var(--text-color);
-/* пропорции 4/3 */
-aspect-ratio: 4/3;
+  margin-top: 7%;
+  border: 1px solid var(--text-color);
+  /* пропорции 4/3 */
+  aspect-ratio: 4/3;
 }
 
 /* заголовок карточки */
 .content_card-title {
   font-size: 60px;
-
 }
 
 /* абзац в карточке */
@@ -303,7 +305,7 @@ aspect-ratio: 4/3;
 
 /* подчеркивание заголовка в конце */
 .colored-text::after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--accent-color);
   /* чтобы был за текстом */
@@ -315,20 +317,46 @@ aspect-ratio: 4/3;
   inset-inline-start: -4px;
 }
 
-
 /* подвал */
 .footer {
-display: flex;
-justify-content: center;
-margin-top: 10%;
-padding: 2.5%;
-border-top: 1px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  padding: 2.5%;
+  border-top: 1px solid var(--text-color);
 }
 
 /* абзац подвала */
 .footer__copyright {
-color: var(--text-color);
-font-family: var(--main-font);
-font-size: 18px;
-font-weight: 400;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* темная тема */
+/* переопределяем переменные */
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
+}
+
+/* замена оранжеового подчеркивания*/
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+  }
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+
+/* изменение буквциы в темной теме */
+.theme_dark .content_text-block_type_first-lettered
+.content_paragraph:first-child:first-letter {
+  border: 1px solid var(--text-color);
+}
+
+.theme_dark .content_list::before {
+  background-image: url(../images/marker-dark.svg);
 }
