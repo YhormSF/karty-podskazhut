@@ -65,6 +65,101 @@ padding-top: 10%;
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
   margin-block-end: 40px; /* margin-bottom */
 }
+
+/* навигационное меню с лого и переключателем тем */
+.header_menu {
+display: flex;
+justify-content: space-between;
+
+
+border-top: 1px solid #312A4E;
+border-bottom: 1px solid #312A4E;
+
+padding-block: 20px;
+}
+
+
+
+/* контейнер списка */
+.header_theme-toggler {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  padding: 0;
+  
+}
+
+/* обе кнопки */
+.header_theme-button {
+  border: none;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  line-height: 104%; /* 18.72px */
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  /* прозрачный фон для подчеркивания оранжеовго */
+  background-color: transparent;
+  /* жирность 400 - неактивная, 700 - активная */
+  font-weight: 400;
+}
+
+/* кнопка тёмной темы */
+.header_theme-button_type_dark
+
+/* кнопка светлой темы */
+.header_theme-button_type_light
+
+/* включённая в текущий момент кнопка */
+.header_theme-button_is-active {
+  font-weight: 700;
+}
+
+/* контейнер с лого */
+.header_logo {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+
+
+/* подчеркивание у активной темы */
+.header_theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  background-color: var(--accent-color);
+  /* чтобы был за текстом */
+  z-index: -1;
+  /* размер самой линии + отступы от текста */
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+/* сброс фокуса у кнопок и ссылок */
+button:focus,
+ a:focus {
+  outline: none;
+}
+
+/* фокус для ссылок и кнопок */
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+/* выключенная кнопка (то есть уже активная) без реагирования */
+button:disabled {
+  pointer-events: none;
+}
+
+/* стандратное подчеркивание при наведении курсора */
+.header_theme-button:hover {
+ text-decoration: underline;
+}
+
+
 /* заголовки main */
 .content_title {
 font-size: 30px;
@@ -218,4 +313,22 @@ aspect-ratio: 4/3;
   block-size: 0.5ch;
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
+}
+
+
+/* подвал */
+.footer {
+display: flex;
+justify-content: center;
+margin-top: 10%;
+padding: 2.5%;
+border-top: 1px solid var(--text-color);
+}
+
+/* абзац подвала */
+.footer__copyright {
+color: var(--text-color);
+font-family: var(--main-font);
+font-size: 18px;
+font-weight: 400;
 }

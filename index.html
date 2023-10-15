@@ -13,8 +13,37 @@
   </head>
 
   <body class="page theme_dark">
-    <header class="header"></header>
+    <header class="header">
+
     <h1 class="heading content-section header_title">Карты подскажут</h1>
+      
+    <nav class="content-section header_menu">
+        <!-- SVG -->
+        <div class="header_logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="135" height="25">
+            <use href="./images/logo.svg#logo"></use>
+          </svg>
+        </div> 
+          <ul class="header_theme-toggler">
+            <li>
+              <button class="header_theme-button 
+              header_theme-button_type_dark">
+                Тёмная
+              </button>
+            </li>
+            <li>
+              <button
+               class="header_theme-button 
+               header_theme-button_type_light 
+               header_theme-button_is-active" 
+               disabled>
+                Светлая
+              </button>
+            </li>
+          </ul>
+
+      </nav>
+    </header>
 
     <main class="content content-section">
       <h2 class="heading content_title">Креативный подход к решению проблем</h2>
@@ -148,7 +177,11 @@
         </nav>
       </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p class="footer__copyright">
+        VЁRSTKA
+      </p>
+    </footer>
 
     <!-- Раскомментируйте строчку ниже, когда вёрстка будет готова. Если вы назвали все классы. как нужно, переключатель темы будет работать -->
     <!-- <script src="./scripts/theme-changer.js"></script> -->
